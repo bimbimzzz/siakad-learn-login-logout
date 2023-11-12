@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UseranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('home', function(){
         return view('pages.app.dashboard-siakad', ['type_menu'=>'']);
     })->name('home');
+    Route::resource('anggota', UseranController::class);
 });
+
 
 // Route::get('/', function () {
 //     return view('pages.app.dashboard-siakad', ['type_menu' => '']);
